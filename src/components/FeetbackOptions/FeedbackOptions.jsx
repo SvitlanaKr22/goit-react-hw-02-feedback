@@ -1,22 +1,19 @@
 import PropTypes from 'prop-types';
+import css from './../FeetbackOptions/FeedbackOptions.module.css';
 import { nanoid } from 'nanoid';
-
-const baseStyle = {
-  // display: 'block',
-  // textAlign: 'center',
-  border: '2px solid green',
-  borderRadius: '4px',
-  marginRight: '20px',
-  padding: '5px 10px',
-};
 
 export default function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
     <div>
       {options.map(option => (
-        <span key={nanoid()} onClick={onLeaveFeedback} style={baseStyle}>
+        <button
+          type="button"
+          key={nanoid()}
+          onClick={onLeaveFeedback}
+          className={css.button_feedback}
+        >
           {option}
-        </span>
+        </button>
       ))}
     </div>
   );
